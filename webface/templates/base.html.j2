@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <title>Nijak: {{title}}</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" 
+        href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+
+<nav>
+  
+  <ul>
+    <li><a href="{{url_for('index')}}">Index</a></li>
+    <li><a href="{{url_for('info')}}">Info</a></li>
+    <li><a href="{{url_for('info')}}">Květák</a></li>
+    <li><a href="{{url_for('info')}}">Kapusta</a></li>
+    <li><a href="{{url_for('info')}}">Banány</a></li>
+  </ul>
+
+  <p><img src="{{url_for('static', filename='fish.png')}}" alt="#"/>
+
+
+</nav>
+
+{% block obsah %}
+<main>
+
+<a href="/neco/nekde/tu.hmtl">TU</a>
+
+<p>{{pi}} Čem <strong>kdy povrchové:</strong> svou správě k vrak jiný 
+klimatizační, jí <em>pracuje</em> miliard 
+<code>představ s a mě nějaké slovo</code> 
+že některé s nemalé si bojovat. 
+<a href="https://www.spseol.cz">Božka</a>
+Listu minimum domech díky se různé nelichotivá, 
+den k myšlenkami. Ho mě pole náročný 360° 360°, 
+biologa obyčejné s hromadným mohli, 
+o potřeli navštěvovat prostředí.</p>
+ 
+{{ text | safe }}
+
+ 3  4 &gt; 12  &amp;  &copy;  &#64; &#129396; 🙃 😐
+
+
+<pre><code>
+ahoj
+      nazdar
+    lolooooooooo                ooooo
+</code></pre>
+<p>
+ahoj
+      nazdar 
+    lolooooooooo                ooooo
+</p>
+
+
+<p>2*pi:{{2*pi}}  {{2**128}}</p>
+
+</main>
+{% endblock obsah%}
+
+<footer>
+  <p>KOnec</p>
+</footer>
+
+</body></html>

@@ -1,0 +1,30 @@
+{% extends "base.html.j2" %}
+
+{% block obsah %}
+
+{% macro value(name) -%}{{request.args.get(name) or ''}}{%- endmacro %}
+
+
+dNes už jdeme domů!!!
+
+<form  method="get">
+    <input type="text" name="x"  value="{{ value('x') }}" placeholder="číslo X" />
+    +
+    <input type="text" name="y"  value="{{ request.args.get('y') or '' }}" placeholder="číslo Y" />
+    <input type="submit" value="Sečti to."/>
+</form>
+
+Vysledek: {{ z }}
+
+<hr />
+
+<form  method="post">
+    <input type="text"     name="jmeno"  value="" placeholder="jméno" /><br />
+    <input type="password" name="heslo"  value="" placeholder="heslo" />
+    <input type="submit" value="Přihlásit" />
+</form>
+
+
+
+{% endblock obsah %}
+
