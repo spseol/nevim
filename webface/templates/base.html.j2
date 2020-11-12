@@ -9,13 +9,30 @@
 <body>
 
 <nav>
+
+<div>
+<p class="userinfo">
+{% if 'user' in session %}
+  Uživatel: {{session['user']}}
+{% else %}
+  Nikno není přihlášen
+{% endif %}
+</p>
+
+{% for category, message in get_flashed_messages(with_categories=true) %}
+  <p class="userinfo {{ category }}">{{ message }}</p>
+{% endfor %}
+
+</div>
   
   <ul>
     <li><a href="{{url_for('index')}}">Index</a></li>
     <li><a href="{{url_for('info')}}">Info</a></li>
-    <li><a href="{{url_for('info')}}">Květák</a></li>
+    <li><a href="{{url_for('tajne')}}">Supr-tajné</a></li>
     <li><a href="{{url_for('info')}}">Kapusta</a></li>
     <li><a href="{{url_for('info')}}">Banány</a></li>
+    <li><a href="{{ url_for('login') }}">Login</a></li>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
   </ul>
 
   <p><img src="{{url_for('static', filename='fish.png')}}" alt="#"/>
